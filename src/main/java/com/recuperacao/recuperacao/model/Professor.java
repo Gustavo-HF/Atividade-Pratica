@@ -26,6 +26,10 @@ public class Professor {
         this.yearsTeaching = yearsTeaching;
     }
 
+    public Professor(){
+        
+    }
+
     public Long getId() {
         return id;
     }
