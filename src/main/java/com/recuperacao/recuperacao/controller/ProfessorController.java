@@ -67,7 +67,7 @@ public class ProfessorController {
     public String editarProfessor(@PathVariable Long id, Model model){
         Professor professor = professorRepository.findById(id).orElse(null);
         if(professor != null){
-            model.addAttribute("novoProfessor", professor);
+            model.addAttribute("newProfessor", professor);
             professorRepository.save(professor);
             return "Editar";
         } else {
@@ -77,7 +77,7 @@ public class ProfessorController {
     }
 
     @PostMapping("/atualizar/{id}")
-    public String atualizarProfessor(@ModelAttribute("novoProfessor") Professor professor){
+    public String atualizarProfessor(@ModelAttribute("newProfessor") Professor professor){
         professorRepository.save(professor);
 
         return "redirect:/";

@@ -13,13 +13,13 @@ public class Professor {
     private Long id;
 
     private String name;
-    private String cpf;
+    private String areaDeEnsino;
     private boolean isEfetivo;
     private double wage;
     private int yearsTeaching;
 
-    public Professor(String cpf, boolean isEfetivo, String name, double wage, int yearsTeaching) {
-        this.cpf = cpf;
+    public Professor(String areaDeEnsino, boolean isEfetivo, String name, double wage, int yearsTeaching) {
+        this.areaDeEnsino = areaDeEnsino;
         this.isEfetivo = false;
         this.name = name;
         this.wage = wage;
@@ -46,12 +46,12 @@ public class Professor {
         this.name = name;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getAreaDeEnsino() {
+        return areaDeEnsino;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setAreaDeEnsino(String areaDeEnsino) {
+        this.areaDeEnsino = areaDeEnsino;
     }
 
     public boolean isIsEfetivo() {
