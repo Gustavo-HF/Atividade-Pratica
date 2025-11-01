@@ -12,9 +12,9 @@ import com.recuperacao.recuperacao.model.Professor;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 
 
@@ -63,7 +63,25 @@ public class ProfessorController {
         return "redirect:/";
     }
     
-    
+    @GetMapping("/editar/{id}")
+    public String editarProfessor(@PathVariable Long id, Model model){
+        Professor professor = professorRepository.findById(id).orElse(null);
+        if(professor != null){
+            model.addAttribute("novoProfessor", professor);
+            professorRepository.save(professor);
+            return "Editar";
+        } else {
+             return "redirect:/";
+        }
+
+    }
+
+    @PostMapping("/atualizar/{id}")
+    public String atualizarProfessor(@ModelAttribute("novoProfessor") Professor professor){
+        professorRepository.save(professor);
+
+        return "redirect:/";
+    }
     
     
 }
