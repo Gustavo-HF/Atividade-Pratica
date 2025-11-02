@@ -1,88 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-     <link rel="stylesheet" th:href="@{/style.css}">
+    <link rel="stylesheet" th:href="@{/style.css}">
 
 <body>
-    <div> 
+    <div class="container">
         <h1> Professores </h1>
         <h2> Adicionar Novo Professor(a)</h2>
         <form th:action="@{/adicionar}" th:object="${newProfessor}" method="post">
-            <input 
+            <input type="text" th:field="*{name}" placeholder="Nome do Professor" required />
 
-            type="text" 
-            th:field="*{name}" 
-            placeholder="Nome do Professor" 
-            required 
-            
-            />
+            <input type="text" th:field="*{areaDeEnsino}" placeholder="Área de Ensino " />
 
-            <input
+            <input type="number" th:field="*{wage}" placeholder="Salário " />
 
-            type="text" 
-            th:field="*{areaDeEnsino}" 
-            placeholder="Área de Ensino " 
-            
-            />
-
-            <input
-
-            type="number" 
-            th:field="*{wage}" 
-            placeholder="Salário " 
-            
-            />
-
-            <input
-
-            type="number" 
-            th:field="*{yearsTeaching}" 
-            placeholder="Anos de Ensino " 
-            
-            />
+            <input type="number" th:field="*{yearsTeaching}" placeholder="Anos de Ensino " />
             <button type="submit">Adicionar</button>
 
         </form>
         <hr />
         <h2> Professores Cadastrados</h2>
         <table>
-            <thead> 
-                <tr> 
-                    <th>Nome </th> 
-                    <th>Área de Ensino </th> 
-                    <th> Efetividade </th> 
+            <thead>
+                <tr>
+                    <th>Nome </th>
+                    <th>Área de Ensino </th>
+                    <th> Efetividade </th>
                     <th> Salário </th>
-                    <th>Anos de Ensino</th>  
+                    <th>Anos de Ensino</th>
                 </tr>
             </thead>
             <tbody>
-                <tr th:if="${professorPage.empty}"> 
+                <tr th:if="${professorPage.empty}">
                     <td colspan="4" style="text-align: center">
                         Nenhum(a) professor(a) cadastrado ainda...
                     </td>
-                </tr> 
+                </tr>
                 <tr th:each="professor : ${professorPage.content}">
                     <td th:text="${professor.name}">Nome </td>
                     <td th:text="${professor.areaDeEnsino}">Área de Ensino </td>
                     <td th:text="${professor.isEfetivo} ? 'Sim' : 'Não'"
-                    th:classappend="${professor.isEfetivo} ? 'status-green' : 'status-red'">
-                        Não efetivado 
-                    </td>   
+                        th:classappend="${professor.isEfetivo} ? 'status-green' : 'status-red'">
+                        Não efetivado
+                    </td>
                     <td th:text="${professor.wage}">Salário </td>
                     <td th:text="${professor.yearsTeaching}">Anos de ensino </td>
                     <td>
-                        <form th:action="@{/excluir}" method="post"> 
-                            <input type="hidden" name="id" th:value="${professor.id}"/>
+                        <form th:action="@{/excluir}" method="post">
+                            <input type="hidden" name="id" th:value="${professor.id}" />
                             <button type="submit">Remover</button>
                         </form>
                     </td>
                     <td>
                         <div>
-                            <span th:text="Efetivo"
-                            th:classappend="${professor.isEfetivo} ? 'sim' : ''"></span>
+                            <span th:text="Efetivo" th:classappend="${professor.isEfetivo} ? 'sim' : ''"></span>
 
                             <form th:action="@{/efetivo}" method="post" th:if="${!professor.isEfetivo}">
                                 <input type="hidden" name="id" th:value="${professor.id}" />
@@ -100,13 +75,14 @@
                 </tr>
             </tbody>
         </table>
-        
+
         <div class="pagination">
             <span>
-                Página <span th:text="${professorPage.number + 1}">1</span> de 
+                Página <span th:text="${professorPage.number + 1}">1</span> de
                 <span th:text="${professorPage.totalPages}">1</span>
             </span>
         </div>
     </div>
 </body>
+
 </html>

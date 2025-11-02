@@ -69,7 +69,7 @@ public class ProfessorController {
         if(professor != null){
             model.addAttribute("newProfessor", professor);
             professorRepository.save(professor);
-            return "Editar";
+            return "editar";
         } else {
              return "redirect:/";
         }

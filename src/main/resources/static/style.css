@@ -9,10 +9,10 @@ body {
     box-sizing: border-box;
 }
 .container {
-    max-width: 800px;
+    max-width: 1200px;
     background-color: #fff;
     padding: 40px;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
@@ -30,7 +30,7 @@ form{
     margin-bottom: 20px;
 }
 
-form input [type="text"] {
+form input[type="text"] {
     flex-grow: 1;
     padding: 20px;
     border: 1px solid #ccc;
@@ -68,7 +68,6 @@ form input [type="text"] {
     text-decoration: none;
     display: inline-block;
 }
-
 
 
 form button {
@@ -110,4 +109,13 @@ tbody tr:hover{
     margin-top: 15px;
     text-align: center;
     font-size: 16px;
+}
+
+thead th {
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px;
+    background-color: #e9eff5;
+    font-weight: bold;
+    border-bottom: 2px solid #ccc;
 }
