@@ -4,7 +4,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
+/* Classe de armazenamento de dados, ela serve como construtor e como banco de dados para o
+ * sistema no modelo MVC
+ */
 @Entity
 public class Professor {
     @Id

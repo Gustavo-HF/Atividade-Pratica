@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
 
-
-
+/* Classe de controle, nela temos toda a implementação da lógica do código, ela se comunica 
+ * direto com a pasta model e repassa todos os valores para a view a partir de professorRepository
+ * assim aparecendo na página html.
+ */
 
 @Controller
 public class ProfessorController {

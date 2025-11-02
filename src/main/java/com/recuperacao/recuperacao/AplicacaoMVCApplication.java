@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class AplicacaoMVCApplication {
-
+/* Classe responsável pelo instanciamento e inicialização do programa. */
 	public static void main(String[] args) {
 		SpringApplication.run(AplicacaoMVCApplication.class, args);
 

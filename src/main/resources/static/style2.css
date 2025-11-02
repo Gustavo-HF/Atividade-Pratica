@@ -37,7 +37,7 @@ input[type="hidden"] {
 }
 
 button[type="submit"] {
-    background-color: rgba(37, 77, 221, 0.933);
+    background-color:  #4a90e2;
     color: white;
     padding: 10px 16px;
     border: none;
@@ -48,5 +48,5 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: rgba(37, 77, 221, 0.933);
+    background-color: #4a90e2;
 }

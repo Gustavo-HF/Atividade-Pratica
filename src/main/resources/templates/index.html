@@ -47,7 +47,7 @@
                         th:classappend="${professor.isEfetivo} ? 'status-green' : 'status-red'">
                         Não efetivado
                     </td>
-                    <td th:text="${professor.wage}">Salário </td>
+                    <td th:text="${#numbers.formatCurrency(professor.wage)}">Salário </td>
                     <td th:text="${professor.yearsTeaching}">Anos de ensino </td>
                     <td>
                         <form th:action="@{/excluir}" method="post">
